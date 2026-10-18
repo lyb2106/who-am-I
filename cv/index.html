@@ -1,18 +1,465 @@
 <!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>이윤범 | CV</title>
-  <!-- PLACEHOLDER: 이 파일을 CV_이윤범_2026-10_ATG향.html 의 내용으로 교체한다. -->
-  <style>
-    body { margin:0; min-height:100vh; display:grid; place-items:center; padding:16px;
-           font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
-           background:#f7f7f5; color:#1d1d1f; }
-    @media (prefers-color-scheme: dark) { body { background:#121214; color:#ececee; } }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>이윤범 CV · Genomics</title>
+<style>
+  :root{
+    --paper:#fbfaf8;
+    --ink:#14191f;
+    --body:#2b333c;
+    --muted:#6a747e;
+    --faint:#98a1aa;
+    --rule:#e2e5e9;
+    --rule-strong:#c9ced4;
+    --accent:#0f5d63;
+    --accent-soft:#e8f1f1;
+    --chip:#f1f3f5;
+    --warn-bg:#fdf4e3;
+    --warn-ink:#8a6416;
+    --maxw:960px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#12151a; --ink:#eef1f4; --body:#c3cad1; --muted:#8b959e; --faint:#6c757e;
+      --rule:#252b33; --rule-strong:#39424c; --accent:#5fb8bd; --accent-soft:#16262a;
+      --chip:#1c212a; --warn-bg:#2a2317; --warn-ink:#d9b25f;
+    }
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0; background:var(--paper); color:var(--body);
+    font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR","Malgun Gothic","Apple SD Gothic Neo",sans-serif;
+    font-size:14.5px; line-height:1.68;
+    font-feature-settings:"tnum" 1;
+    -webkit-font-smoothing:antialiased;
+  }
+  .sheet{max-width:var(--maxw); margin:0 auto; padding:56px 40px 96px;}
+
+  /* ---------- header ---------- */
+  header{border-bottom:2px solid var(--ink); padding-bottom:18px; margin-bottom:6px;}
+  .namerow{display:flex; align-items:baseline; gap:16px; flex-wrap:wrap;}
+  h1{
+    font-size:38px; line-height:1.1; margin:0; letter-spacing:-.02em;
+    color:var(--ink); font-weight:700;
+  }
+  .name-en{
+    font-family:Georgia,"Times New Roman",serif; font-style:italic;
+    font-size:19px; color:var(--muted); letter-spacing:.01em;
+  }
+  .role{
+    margin:12px 0 0; font-size:14px; color:var(--accent); font-weight:600; letter-spacing:.01em;
+  }
+  .role span{color:var(--faint); font-weight:400; margin:0 8px;}
+  .contact{margin-top:10px; font-size:13px; color:var(--muted);}
+  .contact a{color:inherit; text-decoration:none; border-bottom:1px solid var(--rule-strong);}
+
+  /* ---------- skills highlight box ---------- */
+  .skillbox{
+    margin:26px 0 8px; padding:18px 22px 16px;
+    background:var(--accent-soft); border-left:3px solid var(--accent);
+    break-inside:avoid;
+  }
+  .skillbox .cap{
+    font-size:10.5px; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--accent); margin:0 0 12px;
+  }
+  .srow{
+    display:grid; grid-template-columns:118px 1fr; gap:0 18px;
+    padding:6px 0; border-top:1px solid rgba(127,127,127,.18);
+  }
+  .srow:first-of-type{border-top:none; padding-top:0;}
+  .skey{font-size:12.5px; font-weight:650; color:var(--ink); line-height:1.5; padding-top:1px;}
+  .sval{font-size:13px; color:var(--body); line-height:1.6;}
+
+  /* ---------- section grid ---------- */
+  section{
+    display:grid; grid-template-columns:112px 1fr; gap:0 28px;
+    padding:26px 0 4px; border-top:1px solid var(--rule);
+  }
+  section:first-of-type{border-top:none;}
+  h2{
+    grid-column:1; margin:2px 0 0; font-size:11.5px; font-weight:700;
+    letter-spacing:.09em; color:var(--accent); text-transform:uppercase;
+    line-height:1.5;
+  }
+  h2 small{display:block; font-weight:500; letter-spacing:0; text-transform:none; color:var(--faint); font-size:11px; margin-top:2px;}
+  .body{grid-column:2; min-width:0;}
+
+  /* ---------- entries ---------- */
+  .entry{
+    display:grid; grid-template-columns:132px 1fr; gap:0 20px;
+    padding:9px 0; border-bottom:1px solid var(--rule);
+    break-inside:avoid; page-break-inside:avoid;
+  }
+  .entry:last-child{border-bottom:none;}
+  .when{
+    font-size:12.5px; color:var(--muted); white-space:nowrap;
+    font-variant-numeric:tabular-nums; padding-top:1px;
+  }
+  .what strong{color:var(--ink); font-weight:650;}
+  .what .sub{display:block; font-size:13px; color:var(--muted); margin-top:2px;}
+
+  /* ---------- thesis block ---------- */
+  .thesis{
+    margin:6px 0 14px; padding:14px 16px; background:var(--chip); border-radius:4px;
+    break-inside:avoid;
+  }
+  .thesis .kr{color:var(--ink); font-weight:650;}
+  .thesis .en{display:block; font-family:Georgia,serif; font-style:italic; font-size:13px; color:var(--muted); margin-top:3px;}
+
+  /* ---------- lists ---------- */
+  ul.clean{margin:2px 0 0; padding-left:0; list-style:none;}
+  ul.clean > li{
+    position:relative; padding-left:15px; margin:6px 0; break-inside:avoid;
+  }
+  ul.clean > li::before{
+    content:""; position:absolute; left:0; top:.72em;
+    width:5px; height:1px; background:var(--rule-strong);
+  }
+  ul.sub{margin:4px 0 0; padding-left:0; list-style:none;}
+  ul.sub > li{position:relative; padding-left:13px; margin:3px 0; font-size:13px; color:var(--muted);}
+  ul.sub > li::before{content:"·"; position:absolute; left:2px; color:var(--faint);}
+
+  /* ---------- publications ---------- */
+  ol.pubs{margin:2px 0 0; padding-left:0; list-style:none; counter-reset:pub;}
+  ol.pubs > li{
+    position:relative; padding-left:26px; margin:10px 0; font-size:13.5px; line-height:1.62;
+    break-inside:avoid; page-break-inside:avoid;
+  }
+  ol.pubs > li::before{
+    counter-increment:pub; content:counter(pub) ".";
+    position:absolute; left:0; top:0; font-size:12px; color:var(--faint);
+    font-variant-numeric:tabular-nums; padding-top:.15em;
+  }
+  .me{color:var(--ink); font-weight:700;}
+  .jrn{font-style:italic; color:var(--ink);}
+  .ttl{color:var(--body);}
+  .meta{color:var(--faint); font-size:12.5px;}
+  .tag{
+    display:inline-block; font-size:10.5px; letter-spacing:.04em; font-weight:600;
+    padding:1px 6px; border-radius:3px; background:var(--accent-soft); color:var(--accent);
+    vertical-align:.1em; margin-left:5px; white-space:nowrap;
+  }
+  .subhead{
+    font-size:12px; font-weight:700; letter-spacing:.06em; color:var(--muted);
+    margin:16px 0 2px; padding-bottom:4px; border-bottom:1px solid var(--rule);
+  }
+  .subhead:first-child{margin-top:0;}
+
+  /* ---------- table ---------- */
+  table{width:100%; border-collapse:collapse; font-size:13px; margin:2px 0 0;}
+  th{
+    text-align:left; font-size:11px; letter-spacing:.05em; color:var(--faint);
+    font-weight:600; padding:0 10px 6px 0; border-bottom:1px solid var(--rule); white-space:nowrap;
+  }
+  td{padding:7px 10px 7px 0; border-bottom:1px solid var(--rule); vertical-align:top;}
+  tr:last-child td{border-bottom:none;}
+  td:first-child{color:var(--ink); font-weight:600; white-space:nowrap;}
+
+  /* ---------- prose ---------- */
+  .lead{margin:0 0 12px; font-size:13.2px;}
+  .lead b, .kw{color:var(--ink); font-weight:650;}
+
+  /* ---------- collaboration proposal ---------- */
+  .propose{
+    margin:0 0 20px; padding:16px 22px 14px;
+    background:var(--accent-soft); border-left:3px solid var(--accent);
+    break-inside:avoid;
+  }
+  .propose .cap{
+    font-size:12px; font-weight:700; letter-spacing:.08em;
+    color:var(--accent); margin:0 0 8px;
+  }
+  .propose ol{margin:0; padding-left:24px;}
+  .propose li{
+    font-size:16.5px; font-weight:650; color:var(--ink); line-height:1.5; margin:5px 0;
+  }
+  .propose li::marker{color:var(--accent); font-weight:700;}
+
+  /* ---------- footer / print button ---------- */
+  footer{
+    margin-top:38px; padding-top:14px; border-top:1px solid var(--rule);
+    font-size:11.5px; color:var(--faint); display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;
+  }
+  .printbtn{
+    position:fixed; right:22px; bottom:22px; z-index:9;
+    background:var(--accent); color:#fff; border:none; border-radius:999px;
+    padding:11px 20px; font-size:13px; font-weight:600; cursor:pointer;
+    font-family:inherit; box-shadow:0 4px 16px rgba(0,0,0,.18);
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width:720px){
+    .sheet{padding:34px 20px 80px;}
+    section{grid-template-columns:1fr; gap:0;}
+    h2{grid-column:1; margin-bottom:10px;}
+    .body{grid-column:1;}
+    .entry{grid-template-columns:1fr; gap:2px;}
+    .when{font-size:12px; color:var(--faint);}
+    .srow{grid-template-columns:1fr; gap:2px;}
+    h1{font-size:30px;}
+  }
+
+  /* ---------- print ---------- */
+  @page{size:A4; margin:14mm 15mm;}
+  @media print{
+    :root{
+      --paper:#fff; --ink:#000; --body:#1c1c1c; --muted:#4a4a4a; --faint:#6d6d6d;
+      --rule:#d8d8d8; --rule-strong:#b4b4b4; --accent:#0d4f55; --accent-soft:#eef4f4; --chip:#f4f4f2;
+    }
+    body{font-size:9.4pt; line-height:1.55; background:#fff;}
+    .sheet{max-width:none; padding:0;}
+    .printbtn{display:none;}
+    header{padding-bottom:10px; margin-bottom:0;}
+    h1{font-size:24pt;}
+    .name-en{font-size:12pt;}
+    .role{font-size:9.5pt; margin-top:7px;}
+    .contact{font-size:8.6pt; margin-top:6px;}
+    .skillbox{margin:14px 0 4px; padding:11px 13px 10px;}
+    .skillbox .cap{font-size:7.6pt; margin-bottom:8px;}
+    .srow{grid-template-columns:100px 1fr; padding:4px 0;}
+    .skey{font-size:8.6pt;}
+    .sval{font-size:8.8pt; line-height:1.5;}
+    section{padding:14px 0 2px; grid-template-columns:96px 1fr; gap:0 20px;}
+    h2{font-size:8pt;}
+    .entry{padding:5px 0; grid-template-columns:112px 1fr;}
+    .when{font-size:8.4pt;}
+    ol.pubs > li{font-size:8.8pt; margin:6px 0; line-height:1.5;}
+    .lead{font-size:8.8pt;}
+    .propose{padding:10px 14px 8px; margin-bottom:12px;}
+    .propose .cap{font-size:8.4pt;}
+    .propose li{font-size:11pt; margin:3px 0;}
+    section, .entry, .thesis, .skillbox, .propose{break-inside:avoid;}
+    .newpage{break-before:page; page-break-before:always;}
+    a{color:inherit; text-decoration:none;}
+    footer{margin-top:8px; padding-top:7px; font-size:7.6pt; break-before:avoid;}
+    section:last-of-type{padding-bottom:0;}
+  }
+</style>
 </head>
 <body>
-  <p>CV 페이지를 준비 중입니다.</p>
+<div class="sheet">
+
+<header>
+  <div class="namerow">
+    <h1>이윤범</h1>
+    <span class="name-en">Yunbeom Lee, Ph.D.</span>
+  </div>
+  <p class="role">의학박사<span>|</span>유전체 데이터 과학자<span>|</span>생물 빅데이터(Omics, 임상, 역학) 기반의 의료 AI 모델</p>
+  <p class="contact">Contact Information: <a href="mailto:lyb2106@gmail.com">lyb2106@gmail.com</a></p>
+</header>
+
+<div class="skillbox">
+  <p class="cap">기술 역량 · Core competencies</p>
+  <div class="srow">
+    <div class="skey">유전체 분석</div>
+    <div class="sval">WGS · WES · targeted panel, SNV/Indel · CNV · SV 검출, MSI · TMB, cfDNA/ctDNA, 병원체 유전체, 마이크로바이옴 / 메타지놈</div>
+  </div>
+  <div class="srow">
+    <div class="skey">통계 · 메타분석</div>
+    <div class="sval">REML 변량효과 모델, 메타회귀 및 하위군 조절변수 분석, 이질성 · 출판편향 진단, PRISMA / PROBAST / CHARMS 기반 체계적 문헌고찰</div>
+  </div>
+  <div class="srow">
+    <div class="skey">머신러닝</div>
+    <div class="sval">오믹스 학습 예측모델, 특성선택 전략 평가, 모델 검증 설계, 설명가능 AI(explainable AI)</div>
+  </div>
+  <div class="srow">
+    <div class="skey">신호처리</div>
+    <div class="sval">MATLAB 기반 신호처리 이론 학습 (MATLAB 트레이닝 수료, 2026) · 전기생리 신호(spike · ECoG) 분석 학습</div>
+  </div>
+  <div class="srow">
+    <div class="skey">파이프라인 · 인프라</div>
+    <div class="sval">분석 파이프라인 설계 · 배포 · 유지보수, 클라우드 기반 분석(AWS), Django 백엔드 / DB 스키마 설계</div>
+  </div>
+</div>
+
+<section>
+  <h2>학력<small>Education</small></h2>
+  <div class="body">
+    <div class="entry">
+      <div class="when">2023.09 – 2026.08</div>
+      <div class="what"><strong>경희대학교 대학원</strong> 의학과 · 의학박사 (Ph.D.)</div>
+    </div>
+    <div class="entry">
+      <div class="when">2016.09 – 2018.08</div>
+      <div class="what"><strong>경희대학교 대학원</strong> 의학과 · 의학석사 (M.S.)</div>
+    </div>
+    <div class="entry">
+      <div class="when">2011.03 – 2015.08</div>
+      <div class="what"><strong>한양대학교</strong> 생명과학 · 이학사 (B.S.)</div>
+    </div>
+    <div class="entry">
+      <div class="when">2007.03 – 2010.02</div>
+      <div class="what"><strong>안산동산고등학교</strong> 인문계</div>
+    </div>
+
+    <div class="thesis" style="margin-top:14px">
+      <span class="kr">박사학위논문 &nbsp;·&nbsp; 죽상동맥경화증에서의 오믹스 데이터를 활용한 인공지능 예측 모델: 체계적 범위 고찰 및 메타분석</span>
+      <span class="en">AI Prediction Models with Omics Data Utilization for Atherosclerosis: A Systematic Scoping Review and Meta-analysis</span>
+    </div>
+    <ul class="sub" style="margin-top:8px">
+      <li>석사학위논문 — 세포 유리 DNA(cell-free DNA)의 초고감도 변이 검출 및 분석을 위한 기술 개발 (2018)</li>
+      <li>학사 졸업연구 — 정계정맥류(Varicocele)가 Rat 정소에 미치는 영향 (2015)</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>경력<small>Experience</small></h2>
+  <div class="body">
+    <div class="entry">
+      <div class="when">2026.08 – 현재</div>
+      <div class="what"><strong>오로라지노믹스(유)</strong> · 대표이사</div>
+    </div>
+    <div class="entry">
+      <div class="when">2021.09 – 2023.09</div>
+      <div class="what"><strong>오션스바이오㈜</strong> · 이사 / 공동창업자
+        <span class="sub">R&amp;D 총괄 (CTO)</span></div>
+    </div>
+    <div class="entry">
+      <div class="when">2015.06 – 2021.08</div>
+      <div class="what"><strong>㈜셀레믹스</strong> · 주임연구원
+        <span class="sub">Bioinformatics</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="newpage">
+  <h2>학술논문<small>Publications</small></h2>
+  <div class="body">
+
+    <div class="subhead">제 1 저 자</div>
+    <ol class="pubs">
+      <li><span class="me">Lee Y</span>, Park K, Lee JH, Lee SH. <span class="ttl">AI prediction models with omics data utilization for atherosclerosis: A systematic scoping review and meta-analysis.</span> <span class="jrn">Atherosclerosis</span>, 2026 May. <span class="meta">PMID 42008954</span><span class="tag">제1저자</span>
+        <ul class="sub">
+          <li>심혈관 오믹스 AI 문헌 <b>218편</b> 스코핑 리뷰 + 죽상동맥경화증 특이 <b>38편</b> 메타분석을 결합한 2단계 체계적 문헌고찰 설계</li>
+          <li>오믹스 학습 AI 모델이 기존 임상 위험예측모델 대비 유의한 성능 우위 — <b>ΔAUC 0.0586</b> (95% CI 0.0335–0.0836, <i>p</i> &lt; 0.0001)</li>
+          <li>사전 정의 조절변수 7종 하위군 분석 · 메타회귀에서 유의한 조절효과 0건 — 모델 개발 관행의 <b>표준화 부재</b> 규명</li>
+        </ul>
+      </li>
+      <li><span class="me">Lee Y</span>, Lee JA, Park HE, Han H, Kim Y, Bae JM, Kim JH, Cho NY, Kim HP, Kim TY, Kang GH. <span class="ttl">Targeted next-generation sequencing-based detection of microsatellite instability in colorectal carcinomas.</span> <span class="jrn">PLoS One</span>, 2021. <span class="meta">PMID 33524032 · PMC7850495</span><span class="tag">제1저자</span>
+        <ul class="sub">
+          <li><b>mSILICO</b> 계산법 및 마커 패널 개발 — 대장암 세포주 13종 · 신선조직 84건 · FFPE 119건 검증</li>
+          <li>23개 마커 소형 패널로 민감도 ≥ 95%, 특이도 100%, <b>대조 정상조직 불필요</b></li>
+          <li>표적 NGS 패널에 통합해 SNV와 MSI 동시 분석 가능 — 연구 알고리즘의 임상검사 워크플로우 진입 사례</li>
+        </ul>
+      </li>
+    </ol>
+
+    <div class="subhead">공 저 자</div>
+    <ol class="pubs" style="counter-reset:pub 2">
+      <li>Lee CJ, <span class="me">Lee Y</span>, Park S, Kang SM, Jang Y, Lee JH, Lee SH. <span class="ttl">Rare and common variants of <i>APOB</i> and <i>PCSK9</i> in Korean patients with extremely low low-density lipoprotein-cholesterol levels.</span> <span class="jrn">PLoS One</span>, 2017;12(10):e0186446. <span class="meta">PMID 29036232</span><span class="tag">제2저자</span></li>
+      <li>Lee CJ, Oum CY, <span class="me">Lee Y</span>, Park S, Kang SM, Choi D, Jang Y, Lee JH, Lee SH. <span class="ttl">Variants of lipolysis-related genes in Korean patients with very high triglycerides.</span> <span class="jrn">Yonsei Medical Journal</span>, 2018;59(1):148–153. <span class="meta">PMID 29214790</span><span class="tag">제3저자</span></li>
+      <li>Park HJ, Shin HY, Kim S, Kim SH, <span class="me">Lee Y</span>, Lee JH, Hong JM, Kim SM, Park KD, Choi BO, Lee JH, Choi YC. <span class="ttl">Distal myopathy with <i>ADSSL1</i> mutations in Korean patients.</span> <span class="jrn">Neuromuscular Disorders</span>, 2017;27(5):465–472. <span class="meta">PMID 28268051</span><span class="tag">제5저자</span></li>
+      <li>Kim H, Lee CJ, …, <span class="me">Lee Y</span>, …, Lee JH, Lee SH. <span class="ttl">Phenotypic and genetic analyses of Korean patients with familial hypercholesterolemia: Results from the KFH Registry 2020.</span> <span class="jrn">Journal of Atherosclerosis and Thrombosis</span>, 2022. <span class="meta">PMID 34456200</span></li>
+      <li>Kim H, Park SS, Choi S, Han S, Han S, <span class="me">Lee Y</span>, Lee JH, Kim D, Kim H, Yang S, Shugg T, Chung EK. <span class="ttl">Population pharmacokinetics and model-informed precision dosing of lenalidomide incorporating total and unbound plasma concentrations in renally impaired patients with multiple myeloma.</span> <span class="jrn">Drug Design, Development and Therapy</span>, 2026. <span class="meta">PMID 42163996</span></li>
+      <li>Kim B, Ko D, Kim SB, Kim S, Kim M, Hong NK, Park SY, Kim W, Lee BC, <span class="me">Lee Y</span>, Sim T, Chang YT. <span class="ttl">Unraveling the mode of action of a neuron-specific fluorescent probe, NeuO: Intracellular phosphorylation through PAK6 kinase.</span> <span class="jrn">Angewandte Chemie International Edition</span>, 2025;64(37):e202511160. <span class="meta">PMID 40734467</span></li>
+      <li>Kwon WS, Che J, Rha SY, Chung HC, Han HJ, Kim J, Jadamba E, <span class="me">Lee Y</span>, Kim E. <span class="ttl">Development and validation of a targeted sequencing panel for application to treatment-refractory solid tumor.</span> <span class="jrn">Journal of Clinical Oncology</span>, 2021;39:245245.</li>
+    </ol>
+
+    <div class="subhead">학 회 초 록</div>
+    <ol class="pubs" style="counter-reset:pub 9">
+      <li>Lee SH, Lee CJ, <span class="me">Lee Y</span>, Park S, Kang SM, Choi D, Jang Y, Lee JH. <span class="ttl">P6271 Variants of <i>CETP</i>, <i>LIPC</i>, and <i>SCARB1</i> genes in Korean patients with very high HDL-cholesterol levels.</span> <span class="jrn">European Heart Journal</span>, 2018;39(suppl_1):ehy566.P6271. <span class="meta">ESC Congress</span></li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <h2>협업의 폭<small>Collaboration</small></h2>
+  <div class="body">
+    <div class="propose">
+      <p class="cap">협업 방안 제안</p>
+      <ol>
+        <li>유전체 NGS 데이터 분석 용역</li>
+        <li>유전체 데이터 활용 협력 연구</li>
+        <li>AI 기반 오믹스 데이터 분석 협력 연구</li>
+        <li>NGS 데이터 분석 파이프라인 개발 및 배포</li>
+        <li>그 외 관련 연구</li>
+      </ol>
+    </div>
+    <div class="subhead">기 협 력 분 야</div>
+    <table>
+      <tr><th>분야</th><th>협력 그룹</th><th>논문</th></tr>
+      <tr><td>심장내과 · 지질대사</td><td>세브란스 심장혈관병원 지질 그룹</td><td class="meta">3, 4, 6, 10</td></tr>
+      <tr><td>병리과 · 종양 유전체</td><td>서울대학교 병리학교실</td><td class="meta">2</td></tr>
+      <tr><td>신경과 · 신경근육질환</td><td>세브란스 신경과</td><td class="meta">5</td></tr>
+      <tr><td>임상약리 · 정밀투약</td><td>임상약리 · 혈액종양</td><td class="meta">7</td></tr>
+      <tr><td>화학생물학 · 신경</td><td>POSTECH, 한국뇌연구원</td><td class="meta">8</td></tr>
+      <tr><td>AI · 오믹스 방법론</td><td>세브란스 심장내과</td><td class="meta">1</td></tr>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>연구개발 실적<small>R&amp;D</small></h2>
+  <div class="body">
+    <ul class="clean">
+      <li>말기 암 환자 코호트 NGS 데이터의 단일염기변이(SNV) · 구조변이(SV) · 면역연관 변이 <span class="kw">종합 분석 플랫폼 구현</span> <span class="meta">2018 · 신촌세브란스병원 암연구소</span></li>
+      <li>MMR(mismatch repair) 기능부전에 따른 대장암 · 직장암의 차이 규명 및 바이오마커 확인 <span class="meta">2018 · 서울대학교병원 병리과</span></li>
+      <li>대장암 · 직장암 환자에서 <span class="kw">대조군 불필요 미세부수체 불안정성(MSI) 계산 알고리즘</span> 개발 <span class="meta">2021 · 서울대학교병원 병리과</span></li>
+      <li>세포 유리 DNA · 순환 종양 DNA 분석 파이프라인 작성 및 최적화 <span class="meta">2017</span></li>
+      <li>종양변이부담(TMB) 계산 알고리즘 확립 <span class="meta">2018</span></li>
+      <li>임상 요구에 부합하는 NGS 결과 해석 및 큐레이션 방식 확립 <span class="meta">2020</span></li>
+      <li>중증 호흡기 바이러스 9종 · 27종 마커 발굴 및 검출능 평가 <span class="meta">2020</span></li>
+      <li><span class="kw">병원 납품용 바이러스 검출 분석 파이프라인</span> 개발 · 납품 · 유지보수 <span class="meta">국립중앙의료원 — mpox 분석, unknown sample 검출능 검증, Windows 설치버전 배포, v2 개발</span></li>
+      <li>농림축산검역본부 WGS 분석 수행</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>실적 언론보도<small>Press</small></h2>
+  <div class="body">
+    <ul class="clean">
+      <li><i>Celemics, South Dakota State University Create NGS-Based Respiratory Panel for Swine</i> <span class="meta">GenomeWeb</span></li>
+      <li><i>Celemics, Strand Life Sciences Partner on Integrated Platform for NGS Analysis</i> <span class="meta">GenomeWeb</span></li>
+      <li>「셀레믹스, 국내 최초 NGS 기반 호흡기바이러스 9종 동시분석 패널 출시」 <span class="meta">케미컬뉴스</span></li>
+      <li>「셀레믹스, 서울대학교 의과대학과 'NGS 기반 MSI 검사법' 국제 SCIE급 학술지 등재」 <span class="meta">본인 주저자</span></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>대외활동 및 상훈<small>Service &amp; Awards</small></h2>
+  <div class="body">
+    <div class="entry">
+      <div class="when">2026</div>
+      <div class="what"><strong>한국계산뇌과학회 겨울학교 프로젝트 우수상</strong> 수상</div>
+    </div>
+    <div class="entry">
+      <div class="when">2026</div>
+      <div class="what"><strong>BioCAS conference reviewer</strong></div>
+    </div>
+    <div class="entry">
+      <div class="when">2026</div>
+      <div class="what"><strong>MATLAB 트레이닝</strong> 수료</div>
+    </div>
+    <div class="entry">
+      <div class="when">2025</div>
+      <div class="what"><strong>한국연구문화혁신재단 펠로우십</strong></div>
+    </div>
+    <div class="entry">
+      <div class="when">2024</div>
+      <div class="what"><strong>대한기초의학회 우수연구상</strong> 수상</div>
+    </div>
+    <div class="entry">
+      <div class="when">(전)</div>
+      <div class="what"><strong>한국뇌연구원(KBRI) 정책자문위원</strong>
+        <span class="sub">3세대 치료제 현황 및 정책 방향 연구</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>이윤범 · Curriculum Vitae · 2026년 9월</span>
+  <span>lyb2106@gmail.com</span>
+</footer>
+
+</div>
+<button class="printbtn" onclick="window.print()">PDF로 저장 / 인쇄</button>
 </body>
 </html>
