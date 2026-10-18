@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>이윤범 | Who am I</title>
+  <meta name="description" content="이윤범의 디지털 명함">
+  <style>
+    :root { --bg:#f7f7f5; --fg:#1d1d1f; --muted:#6b6b70; --card:#fff; --line:#e3e3e0; --accent:#1f5fbf; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg:#121214; --fg:#ececee; --muted:#9a9aa1; --card:#1c1c1f; --line:#2c2c30; --accent:#7aa7ff; }
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; min-height:100vh; display:grid; place-items:center; padding:16px;
+           background:var(--bg); color:var(--fg);
+           font-family:"Pretendard",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif; }
+    .card { width:100%; max-width:420px; background:var(--card); border:1px solid var(--line);
+            border-radius:16px; padding:32px 28px; text-align:center; }
+    h1 { margin:0 0 4px; font-size:1.6rem; letter-spacing:-0.01em; }
+    p { margin:0; color:var(--muted); }
+    a.btn { display:inline-block; margin-top:24px; padding:12px 22px; border-radius:10px;
+            background:var(--accent); color:#fff; text-decoration:none; font-weight:600; }
+    img.qr { margin-top:24px; width:180px; height:180px; background:#fff; border-radius:8px; padding:6px; }
+    small { display:block; margin-top:8px; color:var(--muted); }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>이윤범</h1>
+    <a class="btn" href="cv/">Curriculum Vitae</a>
+    <img class="qr" src="assets/qr/cv-qr.svg" alt="CV 링크 QR 코드">
+    <small>lyb2106.github.io/who-am-I/cv/</small>
+  </main>
+</body>
+</html>
